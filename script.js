@@ -1,13 +1,3 @@
-/*const request = new XMLHttpRequest();
-
-request.open("GET", "https://api.imgflip.com/get_memes");
-request.send();
-
-request.addEventListener("load", function () {
-  const data = JSON.parse(request.responseText);
-  console.log(data);
-});*/
-
 const container = document.querySelector(".container");
 
 const renderMeme = function (data) {
