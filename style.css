@@ -23,3 +23,15 @@ h1 {
   max-width: 100%;
   margin: auto;
 }
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(138, 2, 2, 0.306);
+}
+.carousel-inner {
+  width: 50%;
+}
+.carousel-item img {
+  height: 300px;
+}

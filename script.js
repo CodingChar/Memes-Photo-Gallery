@@ -1,7 +1,10 @@
-const container = document.querySelector(".container");
+const container = document.querySelector(".carousel-inner");
 
 const renderMeme = function (data) {
-  const html = `<img class="memes" src="${data.url}" />`;
+  const html = `
+  <div class="carousel-item">
+  <img src="${data.url}" class="d-block w-100" alt="...">
+  </div>`;
   container.insertAdjacentHTML("beforeend", html);
 };
 
@@ -10,9 +13,10 @@ const getmeme = function () {
     .then((response) => response.json())
     .then((data) => {
       console.log(data.data.memes);
-      for (let i = 0; i < data.data.memes.length; i++) {
-        renderMeme(data.data.memes[i]);
-      }
+      data.data.memes.forEach((item) => {
+        renderMeme(item);
+      });
+      console.log(container.firstElementChild.classList.toggle("active"));
     });
 };
 
